@@ -18,9 +18,6 @@ async function setTabAsNewTab(tab) {
     if (url && url == "https://javascript.info/coding-style") {
         await chrome.tabs.update(tab.id, { url: newTab });
     }
-    else {
-        tabs.push(tab.id);
-    }
 }
 
 // (tab: Tab) => {...}
