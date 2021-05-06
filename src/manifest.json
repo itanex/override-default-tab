@@ -17,8 +17,10 @@
     "homepage_url": "https://itanex.ninja",
     "minimum_chrome_version": "80.0.3987.0",
     "offline_enabled": true,
+    "options_page": "options/options.html",
     "permissions": [
-        "tabs"
+        "tabs",
+        "storage"
     ],
     "short_name": "odb"
 }
