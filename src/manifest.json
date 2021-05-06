@@ -1,7 +1,7 @@
 {
     "name": "Override Default Tab",
     "manifest_version": 3,
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "Bryan Wood",
     "description": "Override the default tab with a configured location. This prevents unwanted 'managed' tabs",
     "icons": {},
