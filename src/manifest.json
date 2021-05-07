@@ -1,7 +1,7 @@
 {
     "name": "Override Default Tab",
     "manifest_version": 3,
-    "version": "0.0.2",
+    "version": "0.0.3",
     "author": "Bryan Wood",
     "description": "Override the default tab with a configured location. This prevents unwanted 'managed' tabs",
     "icons": {},
@@ -17,7 +17,6 @@
     "homepage_url": "https://itanex.ninja",
     "minimum_chrome_version": "80.0.3987.0",
     "offline_enabled": true,
-    "options_page": "options/options.html",
     "permissions": [
         "tabs",
         "storage"

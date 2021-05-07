@@ -1,1 +1,31 @@
-This is the placeholder for the extension
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Override Default Tab Options</title>
+    <link rel="stylesheet" href="styles/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body class="mt-1 mb-4">
+    <header>
+        <div class="input-group input-group-sm p-1">
+            <span class="input-group-text">Url</span>
+            <input type="text" id="url" class="form-control" placeholder="Enter url to override">
+            <button class="btn btn-outline-secondary" type="button" id="save">Save</button>
+        </div>
+    </header>
+
+    <div id="list"></div>
+
+    <footer class="d-flex flex-row">
+        <div id="loader" class="spinner-border spinner-border-sm text-dark d-none">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div id="status"></div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

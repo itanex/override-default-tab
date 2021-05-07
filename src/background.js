@@ -1,27 +1,27 @@
 
 const newTab = "chrome://newtab";
-const data = {
-    blockedUrl: ''
-};
+/** List of sites to block */
+let blockedList = [];
 
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
 function restoreOptions() {
-
     // Fetch options data record from storage
-    chrome.storage.sync.get(data, (results) => console.log('background::', results));
+    chrome.storage.sync.get({ blockedList }, (results) => {
+        blockedList = results.blockedList;
+        console.log('restoreOptions::', results, blockedList);
+    });
 }
 
 function updateOptions(changes, area) {
-    console.log('data was updated', {changes, area});
-    data.blockedUrl = changes.blockedUrl.newValue;
+    console.log('updateOptions::', { changes, area });
+    restoreOptions();
 }
-
 
 async function closeTab(tab) {
     const url = tab.url || tab.pendingUrl;
 
-    if (url && url == data.blockedUrl) {
+    if (url && blockedList.includes(url)) {
         await chrome.tabs.remove(tab.id);
     }
     else {
@@ -32,13 +32,13 @@ async function closeTab(tab) {
 async function setTabAsNewTab(tab) {
     const url = tab.url || tab.pendingUrl;
 
-    if (url && url == data.blockedUrl) {
+    if (url && blockedList.includes(url)) {
         await chrome.tabs.update(tab.id, { url: newTab });
     }
 }
 
-// document.addEventListener('DOMContentLoaded', );
-restoreOptions()
+restoreOptions();
+
 // (tab: Tab) => {...}
-chrome.storage.onChanged.addListener(updateOptions)
+chrome.storage.onChanged.addListener(updateOptions);
 chrome.tabs.onCreated.addListener(setTabAsNewTab);
