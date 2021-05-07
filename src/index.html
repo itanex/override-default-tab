@@ -7,22 +7,29 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body class="mt-1 mb-4">
-    <header>
+<body class="mt-1 d-flex flex-column">
+    <header class="flex-shrink-1 px-1 pb-1">
         <div class="input-group input-group-sm p-1">
             <span class="input-group-text">Url</span>
+            <div class="input-group input-group-sm">
             <input type="text" id="url" class="form-control" placeholder="Enter url to override">
             <button class="btn btn-outline-secondary" type="button" id="save">Save</button>
         </div>
     </header>
 
-    <div id="list"></div>
+    <div id="list" class="flex-grow-1 overflow-auto d-none">
+    </div>
+    <div id="alert" class="flex-grow-1">
+        <div class="alert alert-secondary text-center">
+            No Urls to blocked
+        </div>
+    </div>
 
-    <footer class="d-flex flex-row">
+    <footer class="d-flex flex-row flex-shrink-1">
         <div id="loader" class="spinner-border spinner-border-sm text-dark d-none">
             <span class="visually-hidden">Loading...</span>
         </div>
-        <div id="status"></div>
+        <div id="status" class="flex-grow-1"></div>
     </footer>
 
     <script src="index.js"></script>

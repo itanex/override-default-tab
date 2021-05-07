@@ -54,8 +54,6 @@ function restoreOptions() {
 }
 
 function renderEntries() {
-  const listElm = document.getElementById('list');
-
   const template = (label) => `
     <div class="d-flex flex-row border">
       <div class="border p-1 icon flex-shrink-1">
@@ -78,7 +76,19 @@ function renderEntries() {
     </div>
     `;
 
-  listElm.innerHTML = blockedList.map(x => template(x)).join('');
+  const listElm = document.getElementById('list');
+  const alert = document.getElementById('alert');
+  const count = document.getElementById('count');
+  count.textContent = blockedList?.length || 0;
+
+  if (blockedList?.length) {
+    alert.classList.add('d-none');
+    listElm.classList.remove('d-none');
+    listElm.innerHTML = blockedList.map(x => template(x)).join('');
+  } else {
+    alert.classList.remove('d-none');
+    listElm.classList.add('d-none');
+  }
 }
 
 document.addEventListener('DOMContentLoaded', restoreOptions);
