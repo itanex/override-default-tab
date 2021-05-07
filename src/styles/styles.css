@@ -1,0 +1,30 @@
+body {
+    width: 300px;
+    height: 400px;
+}
+
+footer {
+    background-color: #CCC;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    font-size: .75rem;
+    min-height: 1.25rem;
+}
+
+#status {
+    min-height: 1.25rem;
+}
+
+#loader {
+    height: .9rem;
+    width: .9rem;
+    margin: auto 3px;
+}
+
+.icon {
+  width: 34px;
+  text-align: center;
+}
