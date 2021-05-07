@@ -9,12 +9,13 @@
 
 <body class="mt-1 d-flex flex-column">
     <header class="flex-shrink-1 px-1 pb-1">
-        <div class="input-group input-group-sm p-1">
-            <span class="input-group-text">Url</span>
+        <form>
             <div class="input-group input-group-sm">
-            <input type="text" id="url" class="form-control" placeholder="Enter url to override">
-            <button class="btn btn-outline-secondary" type="button" id="save">Save</button>
-        </div>
+                <span class="input-group-text">Url</span>
+                <input type="text" id="url" class="form-control" placeholder="Enter url to override">
+                <button class="btn btn-secondary" type="submit" id="save">Save</button>
+            </div>
+        </form>
     </header>
 
     <div id="list" class="flex-grow-1 overflow-auto d-none">
